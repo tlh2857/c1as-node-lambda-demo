@@ -31,7 +31,12 @@ serverless deploy
 ### Testing Different Security Modules
 
 #### Malicious Payload
-
+1. Paste the following scripts into the form labeled "Eval Form": 
+```
+POST /login HTTP/1.1
+Host: vulnerable-website.com
+```
+2. Click on the "Submit" button.
 3. Go to the Cloud One Applicaiton Security Console to view the attack event. 
 
 #### Malicious File Upload 
