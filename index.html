@@ -49,15 +49,4 @@ console.log(form)
     alert(result.message);
   };
 
-  logonForm.onsubmit = async (e) => {
-    e.preventDefault();
-
-    let response = await fetch('/dev/login', {
-      method: 'POST',
-      body: new FormData(logonForm),
-      mode: 'no-cors'
-    });
-  };
-
-
 </script>
