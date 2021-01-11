@@ -12,4 +12,9 @@
 ### Installation
 
 1. Clone/download the repository
-2. In the root directory, run `
+2. In the root directory, run: 
+```
+npm install
+serverless deploy
+```
+
