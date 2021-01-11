@@ -1,4 +1,4 @@
-service: terry-fileupload-c1as-test
+service: c1as-node-lambda-demo
 provider:
   name: aws
   runtime: provided
