@@ -1,0 +1,70 @@
+<h2>Application Security Demo Site</h2>
+    <br />
+    <h3>Malicious File Upload Feature</h3>
+    <label for='user-file'>Test File</label>
+    <input id="user-file" type="file" />
+    <button onclick="submitFile()">Submit</button>
+   <p>Upload Status:</p> <label id='upload-response'>N/A</label>
+<br />
+
+    <h3>Malicious Payload and Illegal File Access Features</h3>
+   <label for='formElem'>Eval Form</label>
+   <form id="formElem">
+    <input type="text" name="name" value="John">
+    <input type="submit">
+  </form>
+
+  <h3>Credential Stuffing Features</h3>
+  <label for='logonForm'>Login Form</label>
+  <form id="logonForm">
+   <input type="text" name="username" value="">
+   <input type="text" name="password" value="">
+   <input type="submit">
+ </form>
+
+<script>
+async function submitFile(){
+    let userFile = document.getElementById("user-file").files[0];
+    let formData = new FormData();
+
+   formData.append("userFile", userFile);
+   let unformattedResponse = await fetch('/dev/fileupload', {method: "POST", body: formData})
+   let res = await unformattedResponse.json();
+
+   if(res.message=='File is uploaded'){
+           console.log(res)
+           document.getElementById('upload-response').innerHTML = res.message + ': ' + res.data.name
+       } else {
+           console.log(res)
+        document.getElementById('upload-response').innerHTML = res.message
+       }
+
+}
+
+formElem.onsubmit = async (e) => {
+    e.preventDefault();
+
+    let response = await fetch('/dev/formupload', {
+      method: 'POST',
+      body: new FormData(formElem),
+      mode: 'no-cors'
+    });
+let form = new FormData(formElem)
+console.log(form)
+    let result = await response.json();
+    
+    alert(result.message);
+  };
+
+  logonForm.onsubmit = async (e) => {
+    e.preventDefault();
+
+    let response = await fetch('/dev/login', {
+      method: 'POST',
+      body: new FormData(logonForm),
+      mode: 'no-cors'
+    });
+  };
+
+
+</script>

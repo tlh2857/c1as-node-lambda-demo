@@ -1,0 +1,6 @@
+node_modules
+node_modules/
+trend_app_protect.json
+sh.exe*
+.serverless
+uploads
