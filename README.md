@@ -2,7 +2,7 @@
 
 ### This is a demo application that is designed to demonstrate the protective abilities of [Trend Micro Cloud One Application Security](https://cloudone.trendmicro.com/docs/application-security/) using a Node.js application hosted on AWS Lambda and API Gateway.
 
-#### Warning: This Node.js application uses the `eval()` method to process raw user input. While Cloud One Application Security can protect against a number of attacks, it doesn't not presently protect against Remote Code Injections, and thus you need to ensure that permissions granted to this application follow least priviledges. By default, the Lambda application provisioned by the Serverless Framework has permissions to create and push to a CloudWatch Log Stream. 
+#### Warning: This Node.js application uses the `eval()` method to process raw user input. While Cloud One Application Security can protect against a number of attacks, it doesn't not directly protect against Remote Code Injections, and thus you need to ensure that permissions granted to this application follow least priviledges. By default, the Lambda application provisioned by the Serverless Framework has permissions to create and push to a CloudWatch Log Stream. 
 
 ### Prerequisites
 - An AWS account
