@@ -11,6 +11,7 @@
 - A Cloud One account with an Application Security Security group and associated credentials
   - You can access the Cloue One console, [here](http://cloudone.trendmicro.com/). From there, either login, or click “Create an Account” and follow the steps to get a free trial of Cloud One. Once registered and logged into Cloud One, click on the “Application Security” tab, and then click “Create New Group”. This will allow you logicaly apply and isolate security settings and events with the demo Lambda application. 
   - [Here are instructions to create a Security Group in Application Security](https://cloudone.trendmicro.com/docs/application-security/groups/#view-and-modify-group-configurations)
+  - [Here are instructuions to configure the policy of your security group](https://cloudone.trendmicro.com/docs/application-security/policies/)
 
 ### Installation
 
