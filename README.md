@@ -15,7 +15,7 @@
 
 1. Clone/download the repository
 2. In the root directory, open the file called "trend_app_protect.json" and edit the "key" and "secret" values with those of your Application Security group. 
-  - more details on configuring the environment variables can be found in the official [Cloud One Documentation](https://cloudone.trendmicro.com/docs/application-security/nodejs-with-express/#install-the-agent). 
+   - more details on configuring the environment variables can be found in the official [Cloud One Documentation](https://cloudone.trendmicro.com/docs/application-security/nodejs-with-express/#install-the-agent). 
 
 3. Open a command line terminal in the root directory, and run: 
 ```
